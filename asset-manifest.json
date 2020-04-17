@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/CoursesYoutube/static/css/main.6bbc7c50.chunk.css",
+    "main.js": "/CoursesYoutube/static/js/main.e3a02337.chunk.js",
+    "main.js.map": "/CoursesYoutube/static/js/main.e3a02337.chunk.js.map",
+    "runtime-main.js": "/CoursesYoutube/static/js/runtime-main.16734924.js",
+    "runtime-main.js.map": "/CoursesYoutube/static/js/runtime-main.16734924.js.map",
+    "static/css/2.de424728.chunk.css": "/CoursesYoutube/static/css/2.de424728.chunk.css",
+    "static/js/2.e783d742.chunk.js": "/CoursesYoutube/static/js/2.e783d742.chunk.js",
+    "static/js/2.e783d742.chunk.js.map": "/CoursesYoutube/static/js/2.e783d742.chunk.js.map",
+    "index.html": "/CoursesYoutube/index.html",
+    "precache-manifest.3b4bb1cd77befa3da29934ffdc35d43f.js": "/CoursesYoutube/precache-manifest.3b4bb1cd77befa3da29934ffdc35d43f.js",
+    "service-worker.js": "/CoursesYoutube/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/CoursesYoutube/static/css/2.de424728.chunk.css.map",
+    "static/css/main.6bbc7c50.chunk.css.map": "/CoursesYoutube/static/css/main.6bbc7c50.chunk.css.map",
+    "static/js/2.e783d742.chunk.js.LICENSE.txt": "/CoursesYoutube/static/js/2.e783d742.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.16734924.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.e783d742.chunk.js",
+    "static/css/main.6bbc7c50.chunk.css",
+    "static/js/main.e3a02337.chunk.js"
+  ]
+}
