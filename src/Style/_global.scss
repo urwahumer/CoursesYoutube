@@ -112,3 +112,19 @@ container {
   transform: scale(1.5);
 }
 
+.border-brown {
+  border: 20px solid #bd5d38 !important;
+}
+
+.nav-logo {
+  font-family: "Nothing You Could Do", cursive !important;
+  font-weight: bold;
+}
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+  cursor: pointer !important;
+}

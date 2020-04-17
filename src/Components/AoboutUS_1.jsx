@@ -7,7 +7,7 @@ const AoboutUS_1 = () => {
         <div class="row align-items-center justify-content-between">
           <div class="col-lg-5 about-left">
             <img
-              class="img-fluid rounded-sm border-right border-bottom border-dark"
+              class="img-fluid rounded-sm border-left border-top border-brown "
               src="https://www.learningcrux.com/image/5d468f764fdd3f4d5a03888e"
               alt=""
             />

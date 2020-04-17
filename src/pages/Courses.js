@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Reviews from "../Components/Reviews";
-import Courses_Cont from "../Components/Courses";
-
+import Courses_Cont from "../Components/AllCourses";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 const Courses = () => {
   return (
     <div>

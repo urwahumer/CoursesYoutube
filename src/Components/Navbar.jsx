@@ -4,17 +4,24 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg_orange fixed-top"
+        className="navbar navbar-expand-lg navbar-dark bg_orange fixed-top text-center "
         id="sideNav"
       >
         <a className="navbar-brand js-scroll-trigger" to="#page-top">
-          <span className="d-block d-lg-none">Clarence Taylor</span>
+          <Link to="/">
+            <span className="d-block d-lg-none nav-logo text-white">
+              CodeWithMosh
+            </span>
+          </Link>
+
           <span className="d-none d-lg-block">
             <img
               className="img-fluid img-profile rounded-circle mx-auto mb-2"
               src="https://programmingwithmosh.com/wp-content/uploads/2017/06/mosh-300px.png"
               alt=""
             />
+
+            <p className="nav-logo">Mosh Hamedanni</p>
           </span>
         </a>
         <button

@@ -1,9 +1,6 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import About from "../pages/About";
-import Career from "../pages/Career";
-import Courses from "../pages/Courses";
-import Contact from "../pages/Contact";
+
 const Home = () => {
   return (
     <div>
@@ -48,15 +45,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <hr className="m-0" />
-        <About />
-        <hr className="m-0" />
-        <Career />
-        <hr className="m-0" />
-        <Courses />
-        <hr className="m-0" />
-
-        <hr className="m-0" />
       </div>
     </div>
   );
