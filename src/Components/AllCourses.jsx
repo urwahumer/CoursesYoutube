@@ -1,57 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+// https://www.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UCWv7vMbMWH4-V0ZXdmDpPBA&maxResults=25&prettyPrint=true&key=[YOUR_API_KEY]
 const Courses_Cont = props => {
-  let CourseData = [
-    {
-      Course_Name: "JavaScript",
-      Instructor_Name: "Mosh Hamedanni",
-      Playlist_ID: "PLTjRvDozrdlxEIuOBZkMAK5uiqp8rHUax",
-      Course_Img:
-        "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/4JkBtVU9QUwcwFCWi3AV"
-    },
-    {
-      Course_Name: "Angular from Scratch",
-      Instructor_Name: "Mosh Hamedanni",
-      Playlist_ID: "PLTjRvDozrdlxAhsPP4ZYtt3G8KbJ449oT",
-      Course_Img:
-        "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/stccKo5kR5iZY7CtLFvi"
-    },
-    {
-      Course_Name: "React Js",
-      Instructor_Name: "Mosh Hamedanni",
-      Playlist_ID: "PLTjRvDozrdlzBR7lYU4DtQRDQ6xCNSBIS",
-      Course_Img:
-        "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/SVFQZQAyRpqJ31f6LNGe"
-    },
-    {
-      Course_Name: "Node Js",
-      Instructor_Name: "Mosh Hamedanni",
-      Playlist_ID: "PLTjRvDozrdlydy3uUBWZlLUTNpJSGGCEm",
-      Course_Img:
-        "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/nlMKa4JeSBysXoj7pa90"
-    },
-    {
-      Course_Name: "Front End Development",
-      Instructor_Name: "Mosh Hamedanni",
-      Playlist_ID: "PLTjRvDozrdlw5En5v2xrBr_EqieHf7hGs",
-      Course_Img:
-        "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/GaDoSeRHQqeFuL19uPWR"
-    },
-    {
-      Course_Name: "SQL in 3 Hours",
-      Instructor_Name: "Mosh Hamedanni",
-      Playlist_ID: "PLTjRvDozrdlynYXGUfyyMZdrQ0Sz27aud",
-      Course_Img:
-        "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/RL4kFbu1SMiCIeLAtWX3"
-    }
-  ];
-  const [courseInfo, setCourseInfo] = useState(CourseData);
-  console.log(courseInfo);
-  let newArray = courseInfo.map((item, i) => {
+  const [playLists, setplayLists] = useState([]);
+  const apiKey = "AIzaSyAH1dfQAU1wOBl9diKpCkWb6h2j6cnKxoI";
+  const channelId = "UCWv7vMbMWH4-V0ZXdmDpPBA";
+
+  useEffect(() => {
+    fetch(
+      `  https://www.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${channelId}&maxResults=25&prettyPrint=true&key=${apiKey}`
+    )
+      .then(res => res.json())
+      .then(data => {
+        const result = data.items.map(item => {
+          return {
+            pTitle: item.snippet.title,
+            pId: item.id,
+            pDate: item.snippet.publishedAt,
+            pUrl: item.snippet.thumbnails.high.url,
+            pTotalVideos: item.contentDetails.itemCount
+          };
+        });
+        setplayLists(result);
+      });
+  }, []);
+  console.log(playLists);
+
+  let newArray = playLists.map((item, i) => {
     return (
       <Link
         to={{
-          pathname: `Course_Playlist_Videos/${item.Playlist_ID}`
+          pathname: `Course_Playlist_Videos/${item.pId}`
         }}
       >
         <div className="col-sm-4 col-12 mb-4">
@@ -59,16 +38,24 @@ const Courses_Cont = props => {
             <div className="inner">
               <img
                 className="card-img-top"
-                src={item.Course_Img}
+                src={item.pUrl}
                 alt="Card image cap"
               />
             </div>
             <div className="card-body text-center">
-              <h5 className="card-title  bg_orange_heading ">
-                {item.Course_Name}
-              </h5>
-              <p className="card-text text-dark">{item.Instructor_Name}</p>
+              <h5 className="card-title  bg_orange_heading ">{item.pTitle}</h5>
+              <p className="card-text text-dark"></p>
               <a className="btn btn-success text-white">Watch</a>
+            </div>
+            <div class="card-footer ">
+              <div className="d-flex justify-content-between">
+                <small class="text-muted ">
+                  Total Videos : {item.pTotalVideos}
+                </small>
+                <small class="text-muted  ">
+                  {item.pDate.slice(0, item.pDate.search("T"))}
+                </small>
+              </div>
             </div>
           </div>
         </div>
