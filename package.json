@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "homepage": "https://urwahumer.github.io/CoursesYoutube",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "gh-pages": "^2.2.0",
+    "netlify-cli": "^2.47.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
@@ -18,7 +20,7 @@
   },
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -b source -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
